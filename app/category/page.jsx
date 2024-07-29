@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { useAppSelector, useAppDispatch } from '@/lib/store/hooks';
-import { selectCategories, selectGeneralSubmit, selectGraduatesSubmit, selectUndergraduatesSubmit } from '@/lib/store/slices/category.slice';
+import { selectCategories, selectGeneralSubmit, selectGraduatesSubmit, selectUndergraduatesSubmit, clearVotes } from '@/lib/store/slices/category.slice';
 import { useRouter } from 'next/navigation';
 
 
@@ -12,9 +12,14 @@ const Page = () => {
     const graduatesSubmit = useAppSelector(selectGraduatesSubmit);
     const generalSubmit = useAppSelector(selectGeneralSubmit);
     const undergraduatesSubmit = useAppSelector(selectUndergraduatesSubmit);
+    const dispatch = useAppDispatch()
     const router = useRouter()
 
     const navigateCategory = (x) => router.push(`/category/${x}?award=0`)
+
+    const handleClearVotes = () => {
+        dispatch(clearVotes())
+    }
 
     return (
         <div className="vote-categories">
@@ -24,7 +29,7 @@ const Page = () => {
 
                 <h1 className="title">Vote By Categories</h1>
                 <p className="subtitle">Select a category</p>
-                <div className="categories">
+                <div className="categories" onClick={handleClearVotes} >
                     <div className="category" onClick = {graduatesSubmit? null : () => navigateCategory("graduate")} >
                         <span className="category-name">GRADUATE | <span className="awards" > {categories['graduate'].length} awards</span></span>
                         <span className="status">{graduatesSubmit? "voted" : "tap to vote"}</span>
