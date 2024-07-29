@@ -23,6 +23,7 @@ $grey1: #B3B3B3;
   padding: 0;
   margin: 0;
   font-family: Lato;
+  user-select: none;
 }
 
 html,
@@ -482,16 +483,16 @@ $header-text-color: #ffffff;
       }
       
       .buttons{
-        display: grid;
-        // flex-direction: row;
-        // justify-content: flex-end;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        // grid-template-columns: 1fr 1fr;
         width: 100%;
         gap: 20px;
         // margin-top: 30px;
     
         button{
-          padding: 16px 0;
+          padding: 16px 40px;
           border: none;
           border-radius: 50px;
           cursor: pointer;
@@ -499,7 +500,6 @@ $header-text-color: #ffffff;
           text-transform: capitalize;
           font-weight: bold;
           transition: background-color 0.3s;
-          width: 100%;
     
           background-color: #ffffff; // Purple color
           color: rgb(0, 0, 0);
@@ -536,8 +536,14 @@ $header-text-color: #ffffff;
         }
 
         .buttons{
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+
           button{
             font-size: 14px;
+            width: 100%;
+            padding: 16px 0;
+
             img{
               width: 13px;
             }
