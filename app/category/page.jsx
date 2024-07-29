@@ -40,6 +40,8 @@ const Page = () => {
                         <span className="status">{generalSubmit? "voted" : "tap to vote"}</span>
                     {/* <span className="awards">7 Awards</span> */}
                     </div>
+
+                    
                 </div>
             </div>
             }

@@ -87,7 +87,7 @@ const Page = () => {
                     <p>You can only select one option in each category</p>
                 </div>
                 <div className="buttons">
-                  {awardIndex !== 0 && <button onClick={() => navigate(`/category/general?award=${awardIndex-1}`)} >previous  <img className='prev' src="/prev.svg" alt="" />  </button>}
+                  {awardIndex !== 0 && <button onClick={() => navigate(`/category/general?award=${awardIndex-1}`)} >  <img className='prev' src="/prev.svg" alt="" /> previous </button>}
                   {awardIndex!== general.length - 1 && <button onClick={() => navigate(`/category/general?award=${awardIndex+1}`)}   >next <img  className='next' src="/next.svg" alt="" />  </button>}
                   {awardIndex=== general.length - 1 && <button onClick={submitVote} >{loading? <>Submiting.. <span className='spinner dark' ></span></>:'Submit votes'}</button>}
 

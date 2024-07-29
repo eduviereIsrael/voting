@@ -61,9 +61,11 @@ a {
   }
 }
 
-.App{
-  height: 100vh;
-}
+// .App{
+//   height: 100vh;
+//   overflow-y: auto;
+//   height: 100%;
+// }
 
 .overlay{
   position: fixed;
@@ -146,6 +148,10 @@ body {
 
     }
   }
+
+  @media (max-width: 768px){
+    background: none;
+  }
 }
 
 .content {
@@ -199,6 +205,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    flex-wrap: wrap;
     width: 100%;
     gap: 20px;
     margin-top: 30px;
@@ -237,7 +244,7 @@ body {
 
     .buttons-container{
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
 
       a{
         width: 100%;
@@ -249,6 +256,7 @@ body {
     .text-container{
       p{
         text-align: center;
+        font-size: 24px;
       }
     }
   }
@@ -266,8 +274,12 @@ body {
   background-color: #4b0082; // Background color for the page
   padding: 20px 80px;
   width: 100vw;
-  height: 100vh;
+
   display: flex;
+  min-height: 100vh;
+  overflow-y: auto;
+  height: 100%;
+  padding-top: 50px;
   .container{
     width: 100%;
     // height: 100%;
@@ -275,22 +287,23 @@ body {
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
+    margin-top: 150px;
+    overflow-y: auto;
     // padding: 0 80px;
     // border: 1px solid ;
 
     .title {
       font-size:53px;
-      margin-bottom: 10px;
       font-family: Beardsons;
       letter-spacing: 3px;
-      margin-bottom: 24px;
+      margin-bottom: 18px;
 
     }
   
     .subtitle {
       font-family: Foglihten;
       font-size: 24px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
   
     .categories {
@@ -329,7 +342,7 @@ body {
         }
   
         .status, .awards {
-          font-size: 1rem;
+          font-size: 16px;
           font-family: sans-serif;
         }
   
@@ -337,6 +350,8 @@ body {
           margin-right: auto;
           // margin-left: 10px;
         }
+
+        
       }
     }
   }
@@ -358,9 +373,18 @@ body {
       }
 
       .categories{
+        margin-top: 24px;
         .category{
+          padding: 15px;
+
           .category-name{
-            font-size: 18px;
+            font-size: 17px;
+            text-align: left;
+
+            .awards{
+              font-size: 14px;
+            }
+
           }
         }
       }
@@ -382,15 +406,16 @@ $header-text-color: #ffffff;
   background-position: right center;
   background-size: cover;
   color: #fff;
-  min-height: 100vh;
+  // min-height: 100vh;
   overflow-y: auto;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   width: 100vw;
   padding: 57px 100px;
+  overflow-x: hidden;
 
   .header{
     background: none;
@@ -457,15 +482,16 @@ $header-text-color: #ffffff;
       }
       
       .buttons{
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
+        display: grid;
+        // flex-direction: row;
+        // justify-content: flex-end;
+        grid-template-columns: 1fr 1fr;
         width: 100%;
         gap: 20px;
         // margin-top: 30px;
     
         button{
-          padding: 16px 68px;
+          padding: 16px 0;
           border: none;
           border-radius: 50px;
           cursor: pointer;
@@ -473,6 +499,7 @@ $header-text-color: #ffffff;
           text-transform: capitalize;
           font-weight: bold;
           transition: background-color 0.3s;
+          width: 100%;
     
           background-color: #ffffff; // Purple color
           color: rgb(0, 0, 0);
@@ -595,6 +622,12 @@ $header-text-color: #ffffff;
 
 
     .vote-content{
+
+      .content-header{
+        .buttons{
+
+        }
+      }
       .nominees-div{
         grid-template-columns: 1fr ;
         // background: $voting-background-color;
