@@ -33,6 +33,31 @@ const Page = () => {
       dispatch(sendVotes({ votes, categoryEndpoint: "graduate" }));
     }
 
+    
+
+    const moveToSecondPosition = (data, targetName) => {
+      // Find the index of the object with the matching name
+      let array = [...data]
+      if(array?.length > 5){
+
+        const index = array.findIndex(obj => obj.name === targetName);
+      
+        // If the object is found and it's not already in the second position
+        if (index !== -1 && index !== 1) {
+          // Remove the object from its current position
+          const [item] = array.splice(index, 1);
+      
+          // Insert the object at the second position (index 1)
+          array.splice(1, 0, item);
+        }
+      
+        return array;
+      }
+    };
+
+    const renderedNominees = moveToSecondPosition(nominees, 'Mide Victor');
+    // console.log(renderedNominees)
+
     useEffect(() => {
       if (votingFeedback) {
           toast.success(votingFeedback);
@@ -93,8 +118,8 @@ const Page = () => {
             </div>
             <div className="nominees-div">
               {
-                nominees && nominees.map((nominee, index) => (
-                  <div key={index} className="nominee" onClick={() => handleAddVote(nominee.id)} >
+                nominees && renderedNominees.map((nominee, index) => (
+                  <div key={nominee.name} className="nominee" onClick={() => handleAddVote(nominee.id)} >
                      {
                       nominee.image.trim() && 
                     <div className="img">
