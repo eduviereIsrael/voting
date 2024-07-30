@@ -42,7 +42,7 @@ const Page = () => {
           const timer = setTimeout(() => {
               dispatch(clearMessages());
               router.push("/category")
-          }, 5000); // 10 seconds timeout
+          }, 2000); // 10 seconds timeout
 
           // Cleanup the timeout on component unmount or if the effect is triggered again
           return () => clearTimeout(timer);
@@ -55,7 +55,7 @@ const Page = () => {
           toast.error(votingError);
           const timer = setTimeout(() => {
               dispatch(clearMessages());
-          }, 10000); // 10 seconds timeout
+          }, 2000); // 10 seconds timeout
 
           // Cleanup the timeout on component unmount or if the effect is triggered again
           return () => clearTimeout(timer);
