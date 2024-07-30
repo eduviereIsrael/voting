@@ -15,7 +15,7 @@ export default function Home() {
           </div> */}
           <div className="text-container">
             <img src="/hero.png" alt="" />
-            <p>Vote for your favorite contestants <br/> in the various categories</p>
+            <p>Vote for your favorite nominees <br/> in the various categories</p>
           </div>
           <div className="buttons-container">
             <a href="/category" className="vote-button">Vote now</a>
