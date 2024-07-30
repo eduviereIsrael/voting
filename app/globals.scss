@@ -502,6 +502,10 @@ $header-text-color: #ffffff;
         background-color: #fff;
         opacity: 0.3;
       }
+
+      @media (max-width: 768px){
+        gap: 3px;
+      }
     }
   }
 
