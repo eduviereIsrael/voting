@@ -821,3 +821,13 @@ $header-text-color: #ffffff;
     }
   }
 }
+
+.mobile{
+  display: none;
+
+  @media (max-width: 768px){
+    display: unset;
+    margin-top: 40px;
+    margin-bottom: 100px;
+  }
+}

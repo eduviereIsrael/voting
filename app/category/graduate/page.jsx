@@ -159,6 +159,16 @@ const Page = () => {
                 ))
               }
             </div>
+            <div className="content-header mobile">
+                
+                <div className="buttons">
+                  {awardIndex === 0 && <span > </span>}
+                  {awardIndex !== 0 && <button onClick={() => navigate(`/category/graduate?award=${awardIndex-1}`)} > <img className='prev' src="/prev.svg" alt="" /> previous</button>}
+                  {awardIndex!== graduate.length - 1 && <button onClick={() => navigate(`/category/graduate?award=${awardIndex+1}`)}   >next <img  className='next' src="/next.svg" alt="" /> </button>}
+                  {awardIndex=== graduate.length - 1 && <button onClick={submitVote} >{loading? <>Submiting.. <span className='spinner dark' ></span></>:'Submit votes'}</button>}
+
+                </div>
+            </div>
           </main></>}
           {/* <ToastContainer /> */}
           <Toaster
