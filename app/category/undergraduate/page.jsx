@@ -41,7 +41,7 @@ const Page = () => {
           toast.success(votingFeedback);
           const timer = setTimeout(() => {
               dispatch(clearMessages());
-              router.push("/category")
+              router.push("/voted")
 
           }, 2000); // 10 seconds timeout
 
@@ -88,6 +88,8 @@ const Page = () => {
                     <p>You can only select one option in each category</p>
                 </div>
                 <div className="buttons">
+                {awardIndex === 0 && <span > </span>}
+
                   {awardIndex !== 0 && <button onClick={() => navigate(`/category/undergraduate?award=${awardIndex-1}`)} >  <img className='prev' src="/prev.svg" alt="" /> previous </button>}
                   {awardIndex!== undergraduate.length - 1 && <button onClick={() => navigate(`/category/undergraduate?award=${awardIndex+1}`)}   >next <img  className='next' src="/next.svg" alt="" />  </button>}
                   {awardIndex=== undergraduate.length - 1 && <button onClick={submitVote} >{loading? <>Submiting.. <span className='spinner dark' ></span></>:'Submit votes'}</button>}
