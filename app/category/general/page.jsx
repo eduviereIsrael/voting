@@ -97,9 +97,12 @@ const Page = () => {
               {
                 nominees && nominees.map((nominee, index) => (
                   <div key={index} className="nominee" onClick={() => handleAddVote(nominee.id)} >
+                     {
+                      nominee.image.trim() && 
                     <div className="img">
                       <img src={nominee.image} alt="image" />
                     </div>
+                    }
                     <div className="details">
 
                       <span>{index + 1}.</span>
