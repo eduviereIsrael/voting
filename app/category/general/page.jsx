@@ -88,7 +88,29 @@ const Page = () => {
     }
   };
 
-  const renderedNominees = moveToFirstPosition(nominees, 'Ayomide Yusuf')
+  const moveToSecondPosition = (data, targetName) => {
+    // Find the index of the object with the matching name
+    let array = data?.length > 0? [...data] : []
+    if(array?.length > 5){
+
+      const index = array.findIndex(obj => obj.name === targetName);
+    
+      // If the object is found and it's not already in the second position
+      if (index !== -1 && index !== 1) {
+        // Remove the object from its current position
+        const [item] = array.splice(index, 1);
+    
+        // Insert the object at the second position (index 1)
+        array.splice(1, 0, item);
+      }
+    
+      return array;
+    }
+  };
+
+  const firstData = moveToSecondPosition(nominees, "Mide Victor")
+
+  const renderedNominees = moveToFirstPosition(firstData, 'Ayomide Yusuf')
   console.log(renderedNominees)
 
   const chooseOne = (first, second) => {
