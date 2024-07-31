@@ -177,8 +177,8 @@ const Page = () => {
                 
                 <div className="buttons">
                   {awardIndex === 0 && <span > </span>}
-                  {awardIndex !== 0 && <button onClick={() => navigate(`/category/graduate?award=${awardIndex-1}`)} > <img className='prev' src="/prev.svg" alt="" /> previous</button>}
-                  {awardIndex!== general.length - 1 && <button onClick={() => navigate(`/category/graduate?award=${awardIndex+1}`)}   >next <img  className='next' src="/next.svg" alt="" /> </button>}
+                  {awardIndex !== 0 && <button onClick={() => navigate(`/category/general?award=${awardIndex-1}`)} > <img className='prev' src="/prev.svg" alt="" /> previous</button>}
+                  {awardIndex!== general.length - 1 && <button onClick={() => navigate(`/category/general?award=${awardIndex+1}`)}   >next <img  className='next' src="/next.svg" alt="" /> </button>}
                   {awardIndex=== general.length - 1 && <button onClick={submitVote} >{loading? <>Submiting.. <span className='spinner dark' ></span></>:'Submit votes'}</button>}
 
                 </div>
