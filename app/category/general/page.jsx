@@ -65,7 +65,6 @@ const Page = () => {
   const moveToFirstPosition = (data, targetName) => {
     // Find the index of the object with the matching name
     const array = data?.length > 0? [...data] : []
-    console.log(data)
     
     if(array?.length > 5){
       // console.log(array)
@@ -90,6 +89,8 @@ const Page = () => {
 
   const moveToSecondPosition = (data, targetName) => {
     // Find the index of the object with the matching name
+    // console.log(data)
+
     let array = data?.length > 0? [...data] : []
     if(array?.length > 5){
 
@@ -109,6 +110,7 @@ const Page = () => {
   };
 
   const firstData = moveToSecondPosition(nominees, "Mide Victor")
+  console.log(firstData)
 
   const renderedNominees = moveToFirstPosition(firstData, 'Ayomide Yusuf')
   console.log(renderedNominees)
@@ -155,7 +157,7 @@ const Page = () => {
             </div>
             <div className="nominees-div">
               {
-                ( renderedNominees)?.map((nominee, index) => (
+                ( nominees)?.map((nominee, index) => (
                   <div key={index} className="nominee" onClick={() => handleAddVote(nominee.id)} >
                      {
                       nominee.image.trim() && 
