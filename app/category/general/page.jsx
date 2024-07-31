@@ -64,8 +64,11 @@ const Page = () => {
 
   const moveToFirstPosition = (data, targetName) => {
     // Find the index of the object with the matching name
-    let array = data?.length > 0? [...data] : []
+    const array = data?.length > 0? [...data] : []
+    console.log(data)
+    
     if(array?.length > 5){
+      // console.log(array)
 
       const index = array.findIndex(obj => obj.name === targetName);
     
@@ -74,26 +77,26 @@ const Page = () => {
         // Remove the object from its current position
         const [item] = array.splice(index, 1);
 
-        console.log(item)
+        // console.log(item)
     
         // Insert the object at the second position (index 1)
         array.splice(0, 0, item);
       }
 
-      console.log(array)
     
       return array;
     }
   };
 
   const renderedNominees = moveToFirstPosition(nominees, 'Ayomide Yusuf')
-  // console.log(renderedNominees)
+  console.log(renderedNominees)
 
   const chooseOne = (first, second) => {
     if (!first[0]?.name){
       console.log(first[0])
       return second
     }
+    return first
   }
 
 
@@ -130,7 +133,7 @@ const Page = () => {
             </div>
             <div className="nominees-div">
               {
-                nominees?.map((nominee, index) => (
+                ( renderedNominees)?.map((nominee, index) => (
                   <div key={index} className="nominee" onClick={() => handleAddVote(nominee.id)} >
                      {
                       nominee.image.trim() && 
