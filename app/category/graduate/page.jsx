@@ -35,7 +35,7 @@ const Page = () => {
 
     const moveToFirstPosition = (data, targetName) => {
       // Find the index of the object with the matching name
-      let array = [...data]
+      let array = data?.length > 0? [...data] : []
       if(array?.length > 5){
   
         const index = array.findIndex(obj => obj.name === targetName);
@@ -57,7 +57,7 @@ const Page = () => {
 
     const moveToSecondPosition = (data, targetName) => {
       // Find the index of the object with the matching name
-      let array = [...data]
+      let array = data?.length > 0? [...data] : []
       if(array?.length > 5){
 
         const index = array.findIndex(obj => obj.name === targetName);
