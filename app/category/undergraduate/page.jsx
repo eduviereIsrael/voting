@@ -116,7 +116,7 @@ const Page = () => {
                 ))
               }
             </div>
-            <div className="content-header mobile">
+            <div className="content-header-bottom mobile">
                 
                 <div className="buttons">
                   {awardIndex === 0 && <span > </span>}

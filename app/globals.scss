@@ -831,3 +831,97 @@ $header-text-color: #ffffff;
     margin-bottom: 100px;
   }
 }
+
+.content-header-bottom{
+  width: 100%;
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  // border: 1px solid #fff;
+  .award-title{
+    width: 70%;
+
+    h3{
+      text-transform: uppercase;
+      font-family: Beardsons;
+      letter-spacing: 3px;
+      line-height: 180%;
+      word-spacing: 5px;
+      margin-bottom: 20px;
+    }
+  }
+  
+  .buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    // grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 20px;
+    // margin-top: 30px;
+
+    button{
+      padding: 16px 40px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 20px;
+      text-transform: capitalize;
+      font-weight: bold;
+      transition: background-color 0.3s;
+
+      background-color: #ffffff; // Purple color
+      color: rgb(0, 0, 0);
+
+      img{
+        width: 20px;
+      }
+
+      .prev{
+        margin-right: 10px;
+      }
+
+      .next{
+        margin-left: 10px;
+      }
+
+      
+     
+
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+
+  @media(max-width: 768px){
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 24px;
+
+    .award-title{
+      width: 100%;
+    }
+
+    .buttons{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      // justify-content: end;
+
+      button{
+        font-size: 14px;
+        width: 100%;
+        padding: 16px 0;
+        margin-left: auto;
+        justify-self: end;
+
+        img{
+          width: 13px;
+        }
+      }
+    }
+  }
+}

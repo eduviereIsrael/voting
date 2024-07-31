@@ -175,9 +175,9 @@ const Page = () => {
                 ))
               }
             </div>
-            <div className="content-header mobile">
+            <div className="content-header-bottom mobile">
                 
-                <div className="buttons">
+                <div className="buttons mobile">
                   {awardIndex === 0 && <span > </span>}
                   {awardIndex !== 0 && <button onClick={() => navigate(`/category/general?award=${awardIndex-1}`)} > <img className='prev' src="/prev.svg" alt="" /> previous</button>}
                   {awardIndex!== general.length - 1 && <button onClick={() => navigate(`/category/general?award=${awardIndex+1}`)}   >next <img  className='next' src="/next.svg" alt="" /> </button>}
