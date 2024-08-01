@@ -162,7 +162,7 @@ const Page = () => {
                      {
                       nominee.image.trim() && 
                     <div className="img">
-                      <img src={nominee.image} alt="image" />
+                      <img src={nominee.image} referrerPolicy='no-referrer' alt="image" />
                     </div>
                     }
                     <div className="details">
