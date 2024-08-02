@@ -41,7 +41,7 @@ const Page = () => {
             <div
               className="category"
               onClick={
-                graduatesSubmit ? null : () => navigateCategory("graduate")
+                () => navigateCategory("graduate")
               }
             >
               <span className="category-name">
@@ -66,9 +66,7 @@ const Page = () => {
             <div
               className="category"
               onClick={
-                undergraduatesSubmit
-                  ? null
-                  : () => navigateCategory("undergraduate")
+                () => navigateCategory("undergraduate")
               }
             >
               <span className="category-name">
@@ -92,7 +90,7 @@ const Page = () => {
             </div>
             <div
               className="category"
-              onClick={generalSubmit ? null : () => navigateCategory("general")}
+              onClick={() => navigateCategory("general")}
             >
               <span className="category-name">
                 GENERAL & MAIN <b>|</b>{" "}
