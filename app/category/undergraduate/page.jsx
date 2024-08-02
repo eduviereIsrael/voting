@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation' 
 // import { ToastContainer, toast } from "react-toastify";
 import toast, { Toaster } from 'react-hot-toast';
+import jwt from "jsonwebtoken"
 
 
 
@@ -33,7 +34,15 @@ const Page = () => {
     }
 
     const submitVote = () => {
-      dispatch(sendVotes({ votes, categoryEndpoint: "undergraduate" }));
+      // console.log(process.env.SECRET)
+      const options = {
+        expiresIn: '6s', 
+      };
+      const secret = process.env.NEXT_PUBLIC_JWT_SECRET
+      const token = jwt.sign({vote: "votes"} ,secret, options)
+      dispatch(sendVotes({ votes, categoryEndpoint: "undergraduate", token }));
+
+      console.log(process.env.NEXT_PUBLIC_JWT_SECRET, token)
     }
 
     useEffect(() => {
