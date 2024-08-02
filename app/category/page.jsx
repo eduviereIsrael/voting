@@ -37,11 +37,14 @@ const Page = () => {
             <img src="/ules.svg" alt="" />
           </div>
 
-          <div className="categories" onClick={handleClearVotes}>
+          <div className="categories">
             <div
               className="category"
               onClick={
-                () => navigateCategory("graduate")
+                () => {
+                  navigateCategory("graduate")
+                  handleClearVotes()
+                }
               }
             >
               <span className="category-name">
@@ -66,7 +69,9 @@ const Page = () => {
             <div
               className="category"
               onClick={
-                () => navigateCategory("undergraduate")
+                () => {navigateCategory("undergraduate")
+                  handleClearVotes()
+                }
               }
             >
               <span className="category-name">
@@ -90,7 +95,9 @@ const Page = () => {
             </div>
             <div
               className="category"
-              onClick={() => navigateCategory("general")}
+              onClick={() => {navigateCategory("general")
+                handleClearVotes()
+              }}
             >
               <span className="category-name">
                 GENERAL & MAIN <b>|</b>{" "}
