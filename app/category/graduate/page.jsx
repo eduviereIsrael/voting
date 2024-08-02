@@ -5,6 +5,8 @@ import { selectCategories, selectLoading, setCategories, addVote, selectVotes, s
 import { useEffect } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation' 
 import toast, { Toaster } from 'react-hot-toast';
+import jwt from "jsonwebtoken"
+
 
 
 const Page = () => {
