@@ -42,7 +42,6 @@ const Page = () => {
       const token = jwt.sign({vote: "votes"} ,secret, options)
       dispatch(sendVotes({ votes, categoryEndpoint: "undergraduate", token }));
 
-      console.log(process.env.NEXT_PUBLIC_JWT_SECRET, token)
     }
 
     useEffect(() => {

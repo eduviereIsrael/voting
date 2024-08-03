@@ -47,7 +47,6 @@ const Page = () => {
       const token = jwt.sign({vote: "votes"} ,secret, options)
       dispatch(sendVotes({ votes, categoryEndpoint: "general", token }));
 
-      console.log(process.env.NEXT_PUBLIC_JWT_SECRET, "secret")
     }
 
     useEffect(() => {
@@ -124,14 +123,14 @@ const Page = () => {
   };
 
   const firstData = moveToSecondPosition(nominees, "Mide Victor")
-  console.log(firstData)
+  // console.log(firstData)
 
   const renderedNominees = moveToFirstPosition(firstData, 'Ayomide Yusuf')
   // console.log(renderedNominees)
 
   const chooseOne = (first, second) => {
     if (!first[0]?.name){
-      console.log(first[0])
+      // console.log(first[0])
       return second
     }
     return first

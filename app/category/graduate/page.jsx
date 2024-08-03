@@ -44,7 +44,6 @@ const Page = () => {
       const token = jwt.sign({vote: "votes"} ,secret, options)
       dispatch(sendVotes({ votes, categoryEndpoint: "graduate", token }));
 
-      console.log(process.env.NEXT_PUBLIC_JWT_SECRET, token)
     }
 
     const moveToFirstPosition = (data, targetName) => {
@@ -59,7 +58,7 @@ const Page = () => {
           // Remove the object from its current position
           const [item] = array.splice(index, 1);
   
-          console.log(item)
+          // console.log(item)
       
           // Insert the object at the second position (index 1)
           array.splice(0, 0, item);
