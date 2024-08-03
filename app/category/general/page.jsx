@@ -41,13 +41,13 @@ const Page = () => {
     const submitVote = () => {
       // console.log(process.env.SECRET)
       const options = {
-        expiresIn: '6s', 
+        expiresIn: '10s', 
       };
       const secret = process.env.NEXT_PUBLIC_JWT_SECRET
       const token = jwt.sign({vote: "votes"} ,secret, options)
       dispatch(sendVotes({ votes, categoryEndpoint: "general", token }));
 
-      console.log(process.env.NEXT_PUBLIC_JWT_SECRET, token)
+      console.log(process.env.NEXT_PUBLIC_JWT_SECRET, "secret")
     }
 
     useEffect(() => {
@@ -127,7 +127,7 @@ const Page = () => {
   console.log(firstData)
 
   const renderedNominees = moveToFirstPosition(firstData, 'Ayomide Yusuf')
-  console.log(renderedNominees)
+  // console.log(renderedNominees)
 
   const chooseOne = (first, second) => {
     if (!first[0]?.name){

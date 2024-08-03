@@ -36,7 +36,7 @@ const Page = () => {
     const submitVote = () => {
       // console.log(process.env.SECRET)
       const options = {
-        expiresIn: '6s', 
+        expiresIn: '10s', 
       };
       const secret = process.env.NEXT_PUBLIC_JWT_SECRET
       const token = jwt.sign({vote: "votes"} ,secret, options)
